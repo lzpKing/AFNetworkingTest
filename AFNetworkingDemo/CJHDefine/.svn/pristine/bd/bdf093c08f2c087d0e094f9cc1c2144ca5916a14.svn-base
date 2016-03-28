@@ -1,0 +1,235 @@
+//
+//  INTERFACE.h
+//  FirstDemo
+//
+//  Created by chenjiahe on 15/7/21.
+//  Copyright (c) 2015年 🍉. All rights reserved.
+//
+
+#ifndef FirstDemo_INTERFACE_h
+#define FirstDemo_INTERFACE_h
+
+
+#pragma mark - 主屏幕宽高
+#define kAl_SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define kAL_SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+
+#pragma mark - 故事板
+#define StoryBoard [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]
+ 
+//带有RGBA的颜色设置
+#define mainColor [UIColor colorWithRed:0.99f green:0.47f blue:0.19f alpha:1.00f]//橙色
+#define blueColor [UIColor colorWithRed:0.11f green:0.61f blue:0.84f alpha:1.00f]//蓝色
+#define COLOR(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+#define grayColor [UIColor colorWithRed:0.81f green:0.82f blue:0.82f alpha:1.00f]//button背景灰色
+#define bgColor [UIColor colorWithRed:0.95f green:0.94f blue:0.95f alpha:1.00f]//背景色
+#define ziColor [UIColor colorWithRed:0.53f green:0.53f blue:0.53f alpha:1.00f];//灰色字
+//////////接口
+
+//二期
+#define kSERVER_URL @"http://192.168.1.52:8080/qzb_p2p/service/"
+#define kWebSERVER_URL  @"http://192.168.1.52:8080/qzb_p2p/"
+//
+//#define kSERVER_URL @"https://www.quanziben.com/service/"
+//#define kWebSERVER_URL  @"https://www.quanziben.com/"
+
+
+//-----------------------------------------------------------
+//一、首页
+
+//客户端首页展示
+#define homeUrl (kSERVER_URL@"appBulkLoan/toIndex")//更改
+
+//-----------------------------------------------------------
+//二，投资
+
+//新手体验标列表
+#define newInvestUrl (kSERVER_URL@"appBulkLoan/ProductListByType")//更改
+//新手体验标详情-投标
+#define newInvestDetUrl (kSERVER_URL@"bulkLoan/begainTenderNovice")
+
+//投资列表
+#define investUrl (kSERVER_URL@"appBulkLoan/ProductList")//更改
+
+//投资详情
+#define investDetail (kSERVER_URL@"appBulkLoan/productDetailsApp")//更改
+
+//一期项目投资详情
+#define firstInvestDetail (kSERVER_URL@"appBulkLoan/productDetailOne")//添加
+
+//立即投标页面
+#define nowInvestUrl (kSERVER_URL@"appBulkLoan/verifyAccountTransPassword")//更改
+
+//投标页面
+#define  invest (kSERVER_URL@"appBulkLoan/begainTender")//更改
+
+//投资协议   web
+#define bondTransfersUrl @"https://www.quanziben.com/service/agreement/bondTransfers"
+
+//投标记录
+#define chargeRecordUrl (kSERVER_URL@"appBulkLoan/tenderRecord")//更改
+//一期投资列表
+#define FirstChargeRecordUrl (kSERVER_URL@"appBulkLoan/tenderRecordOne")//更改
+//-------------------------------------------------------------
+//三，账户
+
+//登录
+#define loginUrl (kSERVER_URL@"AppLogin/login")//更改
+
+//用户注册
+#define registerUrl (kSERVER_URL@"AppRegister/register")//更改
+
+//注册协议   web
+#define registerMesUrl @"https://www.quanziben.com/htm/front/wechat/registerAgreement.html"
+
+//获取验证码
+#define getNumUrl (kSERVER_URL@"AppRegister/verificationCode")//更改
+
+//获得图形验证码
+#define getImgNumUrl (kSERVER_URL@"AppRegister/getcharAndNum")//更改
+
+//我的账户
+#define userCenterUrl (kSERVER_URL@"appAccount/findAccount")//更改
+
+//切换旧版账户
+#define olderUCUrl (kSERVER_URL@"appAccount/switcholdaccount")//添加
+
+//旧版提现页面
+#define olderTiVCUrl (kSERVER_URL@"appAccount/skipWithdrawCash")//添加
+
+//旧版提现
+#define olderTiXianUrl (kSERVER_URL@"appAccount/umpayWithdrawCash")//添加
+
+//新手专区
+#define newPersonAreaUrl (kSERVER_URL@"account/myNoviceBind")
+
+//获取用户详细信息
+#define userDetUrl (kSERVER_URL@"user/infos")
+
+//更新用户基本信息
+#define upDateuserDetUrl (kSERVER_URL@"user/updateinfo")
+
+//修改用户名
+#define upDateuserNameUrl (kSERVER_URL@"user/updateUserName")
+
+//修改用户头像
+#define upDateuserIconUrl (kSERVER_URL@"appUser/upLoad")//更改
+
+//安全中心
+#define safeCenterUrl (kSERVER_URL@"appAccount/safecenter")
+
+//实名认证
+#define openAccountUrl (kSERVER_URL@"AppRegister/openAccount")//更改
+
+//修改密码
+#define NEWPASSWORD_URL (kSERVER_URL@"AppLogin/updatePad")//更改
+
+//设置交易密码 /修改
+#define setPayPass_URL (kSERVER_URL@"appUser/updateTransPass")//添加
+
+//忘记交易密码
+#define reSetPayPass_URL (kSERVER_URL@"appUser/resetTransPassword")//添加
+
+//找回密码第一步
+#define CONSISTEN_URL (kSERVER_URL@"AppLogin/findPasswordByPhone")//判断验证码是否一致  //更改
+
+//重置密码
+#define CONFIRM_URL (kSERVER_URL@"AppLogin/modifyPassword")//确认密码网址  //更改
+
+//绑定银行卡第一步
+#define getBANKNum_URL (kSERVER_URL@"appAccount/bankCardBinding")//添加
+
+//绑定银行卡第二步
+#define BANKCARD_URL (kSERVER_URL@"appAccount/bankCardBindingAdvance")//更改
+
+//解绑银行卡
+#define ChangeBank_URL (kSERVER_URL@"appAccount/unbinding")//添加
+
+//开通协议
+#define OpenXieyi_URL (kSERVER_URL@"user/bindAgreement")
+
+
+//充值 提现 收益记录
+#define rechargeMUrl (kSERVER_URL@"appAccount/rechargeWithdraw")//更改
+
+//旧版交易记录
+#define oldRechargeMUrl (kSERVER_URL@"appAccount/oldTransactionRecord")//更改
+
+//投资记录
+#define investmentListMUrl (kSERVER_URL@"appAccount/tenderRecord")//更改
+
+
+//消息通知
+#define messageUrl (kSERVER_URL@"AppMsg/findmsg")//更改
+//消息已读
+#define messageYiDuUrl (kSERVER_URL@"AppMsg/readMsg")//添加
+//消息删除
+#define messageDelUrl (kSERVER_URL@"AppMsg/deleteMsg")//添加
+
+//投资中
+#define INVESTMENT_URL (kSERVER_URL@"appBulkLoan/tenderRecordByCustNo")//更改
+
+//已结清
+#define SETTLED_URL (kSERVER_URL@"appBulkLoan/tenderFinished")//更改
+
+//回收中
+#define PAYMENT_URL (kSERVER_URL@"appBulkLoan/tenderRecovery")//更改
+
+//还款详情
+#define REPAYMENTDETAILS_URL (kSERVER_URL@"appBulkLoan/getRepayments")//更改
+
+//我的活动
+#define benefitUrl (kSERVER_URL@"AppMsg/active")//更改
+
+//注册奖励
+#define regBenefitUrl (kSERVER_URL@"msg/activityMoneyReg")
+
+//邀请好友记录
+#define reBenefitUrl (kSERVER_URL@"AppMsg/ShowFriendRecord")//更改
+
+//邀请好友投标奖励
+#define activeBenefitUrl (kSERVER_URL@"AppMsg/ShowFriendRewardRecord")//更改
+
+
+//确认提现
+#define mentionNow_URL (kSERVER_URL@"appAccount/createHostingWithDraw")//更改
+
+//获取充值
+#define toRecharge_URL (kSERVER_URL@"appAccount/toRechargeApp")//更改
+
+//充值1
+#define rechargeFirst_URL (kSERVER_URL@"appAccount/bindingRecharge")//添加
+//充值2
+#define rechargeSec_URL (kSERVER_URL@"appAccount/advanceHostingPay")//添加
+
+//-------------------------------------------------------------
+//四、更多
+
+//6.意见反馈
+#define FEEDBACK_URL (kSERVER_URL@"AppMsg/feedback")//添加
+
+//-------------------------------------------------------------
+
+//json解析 null的数据处理
+#define VerifyValue(value)({id tmp;if ([value isKindOfClass:[NSNull class]])tmp = nil;else tmp =value;tmp;})
+
+#define VALUE(obj) [obj isKindOfClass:[NSNull class]]? @"":obj
+
+
+//控制打印
+
+#ifndef __OPTIMIZE__
+
+#define NSLog(format, ...) do {                                                                          \
+fprintf(stderr, "<所在文件：%s : %d行> 方法：%s\n",                                           \
+[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String],  \
+__LINE__, __func__);                                                        \
+(NSLog)((format), ##__VA_ARGS__);                                           \
+fprintf(stderr, "------------------------------- 我是华丽丽的分割线 --------------------------\n");                                               \
+} while (0)
+
+#else
+#define NSLog(...){}
+#endif
+
+#endif
